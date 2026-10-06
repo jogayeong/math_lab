@@ -11,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { AuthActions } from '@/features/landing/components/auth-actions';
 import { NAV_ITEMS, SECTION_IDS } from '@/features/landing/constants/navigation';
 import { hoverLinearClassName, neonButtonClassName } from '@/features/landing/constants/ui';
 import { useScrollSpy } from '@/features/landing/hooks/use-scroll-spy';
@@ -66,6 +67,8 @@ export function Topbar() {
         <NavLinks activeId={activeId} className="hidden items-center gap-5 lg:flex" />
 
         <div className="flex items-center gap-2">
+          <AuthActions className="hidden sm:flex" />
+
           <Button asChild className={cn(neonButtonClassName, 'px-4 lg:px-6')}>
             <a href="#reservation">
               <span className="lg:hidden">예약</span>
@@ -100,6 +103,11 @@ export function Topbar() {
                   섹션으로 이동하는 메뉴입니다.
                 </SheetDescription>
               </SheetHeader>
+              <AuthActions
+                layout="stack"
+                className="mt-8 sm:hidden"
+                onNavigate={() => setIsMenuOpen(false)}
+              />
               <NavLinks
                 activeId={activeId}
                 onNavigate={() => setIsMenuOpen(false)}

@@ -7,10 +7,14 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm, type UseFormRegisterReturn } from 'react-hook-form';
 import { isSignupFailure, requestSignup } from '@/features/auth/api';
+import { KakaoLoginButton } from '@/features/auth/components/kakao-login-button';
+import {
+  authErrorClassName,
+  authFieldClassName,
+  authLinkClassName,
+  authSubmitClassName,
+} from '@/features/auth/constants/ui';
 import { signupSchema, type SignupFormValues } from '@/features/auth/lib/signup';
-
-const inputClassName =
-  'relative block w-full rounded-md border-0 bg-white py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6';
 
 const emptyValues: SignupFormValues = {
   name: '',
@@ -61,11 +65,11 @@ export function SignupForm() {
   };
 
   return (
-    <form className="mt-8 space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
+    <form className="space-y-5" onSubmit={form.handleSubmit(onSubmit)} noValidate>
       {error ? (
-        <div className="rounded-md bg-red-50 p-4" role="alert">
-          <p className="text-sm text-red-700">{error}</p>
-        </div>
+        <p className={authErrorClassName} role="alert">
+          {error}
+        </p>
       ) : null}
 
       <SignupField
@@ -107,17 +111,21 @@ export function SignupForm() {
         registration={form.register('passwordConfirm')}
       />
 
-      <button
-        type="submit"
-        disabled={form.formState.isSubmitting}
-        className="group relative flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-indigo-400"
-      >
+      <button type="submit" disabled={form.formState.isSubmitting} className={authSubmitClassName}>
         {form.formState.isSubmitting ? '가입 중...' : '회원가입'}
       </button>
 
-      <p className="text-center text-sm text-neutral-300">
+      <div className="flex items-center gap-3 text-sm text-neutral-500">
+        <span className="h-px flex-1 bg-primary-500/25" aria-hidden />
+        또는
+        <span className="h-px flex-1 bg-primary-500/25" aria-hidden />
+      </div>
+
+      <KakaoLoginButton />
+
+      <p className="text-center text-sm text-neutral-400">
         이미 계정이 있으신가요?{' '}
-        <Link href="/auth/login-idpw" className="font-semibold text-indigo-300 hover:text-indigo-200">
+        <Link href="/auth/login-idpw" className={authLinkClassName}>
           로그인
         </Link>
       </p>
@@ -146,7 +154,7 @@ function SignupField({
 
   return (
     <div>
-      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-neutral-100">
+      <label htmlFor={id} className="mb-2 block text-sm font-medium text-neutral-200">
         {label}
       </label>
       <input
@@ -155,11 +163,11 @@ function SignupField({
         autoComplete={autoComplete}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className={inputClassName}
+        className={authFieldClassName}
         {...registration}
       />
       {error ? (
-        <p id={errorId} className="mt-1 text-sm text-red-300">
+        <p id={errorId} className="mt-2 text-sm text-red-300">
           {error}
         </p>
       ) : null}
