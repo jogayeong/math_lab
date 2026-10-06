@@ -40,7 +40,7 @@ export function SignupForm() {
       password: values.password,
     });
 
-    if (!signupResult.ok) {
+    if (signupResult.ok === false) {
       setError(signupResult.message);
       return;
     }
