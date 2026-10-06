@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm, type UseFormRegisterReturn } from 'react-hook-form';
-import { requestSignup } from '@/features/auth/api';
+import { isSignupFailure, requestSignup } from '@/features/auth/api';
 import { signupSchema, type SignupFormValues } from '@/features/auth/lib/signup';
 
 const inputClassName =
@@ -40,7 +40,7 @@ export function SignupForm() {
       password: values.password,
     });
 
-    if (signupResult.ok === false) {
+    if (isSignupFailure(signupResult)) {
       setError(signupResult.message);
       return;
     }
