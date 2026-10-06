@@ -12,7 +12,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { NAV_ITEMS, SECTION_IDS } from '@/features/landing/constants/navigation';
-import { neonButtonClassName } from '@/features/landing/constants/ui';
+import { hoverLinearClassName, neonButtonClassName } from '@/features/landing/constants/ui';
 import { useScrollSpy } from '@/features/landing/hooks/use-scroll-spy';
 import { cn } from '@/lib/utils';
 
@@ -36,7 +36,7 @@ function NavLinks({ activeId, onNavigate, className, linkClassName }: NavLinksPr
             onClick={onNavigate}
             aria-current={isActive ? 'location' : undefined}
             className={cn(
-              'inline-flex min-h-11 items-center text-sm font-medium text-neutral-300 transition hover:text-primary-400',
+              'inline-flex min-h-11 items-center text-sm font-medium text-neutral-300 transition-colors duration-500 ease-linear hover:text-primary-400',
               isActive && 'text-primary-500',
               linkClassName,
             )}
@@ -79,7 +79,10 @@ export function Topbar() {
                 type="button"
                 variant="outline"
                 size="icon"
-                className="h-11 w-11 border-primary-500/40 bg-transparent text-neutral-100 hover:bg-primary-500/10 hover:text-primary-400 lg:hidden"
+                className={cn(
+                  hoverLinearClassName,
+                  'h-11 w-11 border-primary-500/40 bg-transparent text-neutral-100 hover:bg-primary-500/10 hover:text-primary-400 lg:hidden',
+                )}
                 aria-label="메뉴 열기"
               >
                 <Menu className="h-5 w-5" />

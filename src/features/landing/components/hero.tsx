@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const hoverTransition = { duration: 0.7, ease: EASE };
+const hoverTransition = { duration: 0.5, ease: 'linear' } as const;
 
 const riseVariants: Variants = {
   hidden: { opacity: 0, y: 28 },

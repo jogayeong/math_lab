@@ -17,13 +17,13 @@ export function Instructors() {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {INSTRUCTORS.map((instructor, index) => (
           <Reveal key={instructor.name} delay={index * 0.08}>
-            <article className={cn(neonCardClassName, 'h-full overflow-hidden p-0')}>
+            <article className={cn(neonCardClassName, 'group h-full overflow-hidden p-0')}>
               <img
                 src={instructor.image}
                 alt={`${instructor.name} 강사 프로필`}
                 width={400}
                 height={400}
-                className="aspect-square w-full object-cover"
+                className="aspect-square w-full object-cover transition-transform duration-500 ease-linear group-hover:scale-105"
               />
               <div className="space-y-2 p-6">
                 <p className="text-sm font-medium text-accent-400">{instructor.subject}</p>

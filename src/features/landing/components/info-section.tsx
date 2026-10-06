@@ -2,7 +2,7 @@
 
 import { Bus, Clock, MapPin, Phone } from 'lucide-react';
 import { ACADEMY } from '@/features/landing/constants/content';
-import { neonCardClassName } from '@/features/landing/constants/ui';
+import { hoverLinearClassName, neonCardClassName } from '@/features/landing/constants/ui';
 import { SectionHeading, SectionShell } from '@/features/landing/components/section-shell';
 import { cn } from '@/lib/utils';
 
@@ -28,7 +28,10 @@ export function InfoSection() {
               href={ACADEMY.kakaoMapUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-11 shrink-0 items-center text-sm font-medium text-primary-400 hover:text-primary-300"
+              className={cn(
+                hoverLinearClassName,
+                'inline-flex min-h-11 shrink-0 items-center text-sm font-medium text-primary-400 hover:text-primary-300',
+              )}
             >
               지도 앱으로 보기
             </a>

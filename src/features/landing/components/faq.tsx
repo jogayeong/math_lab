@@ -20,7 +20,7 @@ export function Faq() {
       <Accordion type="single" collapsible className="mx-auto max-w-3xl rounded-2xl border border-primary-500/30 bg-neutral-800/50 px-5">
         {FAQ_ITEMS.map((item) => (
           <AccordionItem key={item.id} value={item.id} className="border-neutral-700">
-            <AccordionTrigger className="min-h-11 py-5 text-left text-base text-neutral-100 hover:text-primary-400 hover:no-underline">
+            <AccordionTrigger className="min-h-11 py-5 text-left text-base text-neutral-100 transition-colors duration-500 ease-linear hover:text-primary-400 hover:no-underline">
               {item.question}
             </AccordionTrigger>
             <AccordionContent className="text-base leading-relaxed text-neutral-400">

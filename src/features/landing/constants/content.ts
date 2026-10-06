@@ -23,8 +23,8 @@ export const HERO = {
   description:
     '개념, 오답, 등원까지 데이터로 설계합니다. 중·고등 수학의 빈칸을 메우고, 다음 시험의 등급을 바꿉니다.',
   image: {
-    src: 'https://picsum.photos/seed/math-tech-hero/1200/600',
-    alt: '네온 조명이 비치는 미래지향적 수학 학습 공간',
+    src: '/images/landing/hero-math-lab.jpg',
+    alt: '시안 조명 아래 수식이 적힌 유리 보드와 야간 수학 강의실',
   },
 } as const;
 
@@ -40,13 +40,13 @@ export const INTRO = {
   ],
   gallery: [
     {
-      src: 'https://picsum.photos/seed/math-classroom/800/600',
-      alt: '소규모 강의가 진행되는 MATH.LAB 강의실',
+      src: '/images/landing/academy-classroom.jpg',
+      alt: '칠판 앞에서 소규모 수학 수업이 진행되는 MATH.LAB 강의실',
       caption: '강의실',
     },
     {
-      src: 'https://picsum.photos/seed/math-studyhall/800/600',
-      alt: '개별 좌석이 배치된 MATH.LAB 자습실',
+      src: '/images/landing/academy-studyhall.jpg',
+      alt: '칸막이 좌석에서 개별 학습하는 MATH.LAB 자습실',
       caption: '개별 자습실',
     },
   ],
@@ -97,21 +97,21 @@ export const INSTRUCTORS = [
     subject: '고등 수학 I · 수학 II',
     career: '서울대 수리과학부 · 대치 강의 12년',
     detail: '킬러 문항을 조건 독해와 식으로 쪼개, 학생이 어디서 멈추는지 먼저 찾습니다.',
-    image: 'https://picsum.photos/seed/math-teacher-1/400/400',
+    image: '/images/landing/instructor-han.jpg',
   },
   {
     name: '정민재',
     subject: '확률과 통계 · 미적분',
     career: 'KAIST 수리과학과 · 평가원 문항 분석',
     detail: '선택과목은 계산량보다 판단 순서를 훈련합니다. 주간 리포트의 오답 태그를 직접 설계합니다.',
-    image: 'https://picsum.photos/seed/math-teacher-2/400/400',
+    image: '/images/landing/instructor-jung.jpg',
   },
   {
     name: '오유진',
     subject: '중등 · 고1 공통수학',
     career: '연세대 수학교육과 · 내신 대비 8년',
     detail: '중학교에서 흔들리는 개념을 고1 수행·지필 형식으로 다시 잇습니다.',
-    image: 'https://picsum.photos/seed/math-teacher-3/400/400',
+    image: '/images/landing/instructor-oh.jpg',
   },
 ] as const;
 
