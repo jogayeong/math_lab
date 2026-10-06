@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { palette } from './src/constants/colors';
 
 const config = {
   darkMode: ['class'],
@@ -22,10 +23,17 @@ const config = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
+          ...palette.primary,
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
+          ...palette.secondary,
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+          ...palette.accent,
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -35,10 +43,6 @@ const config = {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
         },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
@@ -47,6 +51,11 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        neutral: palette.neutral,
+      },
+      fontFamily: {
+        sans: ['Pretendard Variable', 'Pretendard', 'sans-serif'],
+        display: ['var(--font-montserrat)', 'Pretendard Variable', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

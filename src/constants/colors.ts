@@ -1,0 +1,57 @@
+export const palette = {
+  primary: {
+    50: '#edfcfc',
+    100: '#d7f9f8', // design.md left this unspecified; generated as a highlight tint of primary-500
+    200: '#aef3f1',
+    300: '#79ebe7',
+    400: '#4ce4df',
+    500: '#1fddd7',
+    600: '#19b5b0',
+    700: '#148d8a',
+    800: '#0f6a67',
+    900: '#0b504d',
+    950: '#062827',
+  },
+  secondary: {
+    50: '#ecfeff',
+    100: '#cffafe',
+    200: '#a5f3fc',
+    300: '#67e8f9',
+    400: '#22d3ee',
+    500: '#06b6d4',
+    600: '#0891b2',
+    700: '#0e7490',
+    800: '#155e75',
+    900: '#164e63',
+    950: '#083344',
+  },
+  accent: {
+    50: '#eff6ff',
+    100: '#dbeafe',
+    200: '#bfdbfe',
+    300: '#93c5fd',
+    400: '#60a5fa',
+    500: '#3b82f6',
+    600: '#2563eb',
+    700: '#1d4ed8',
+    800: '#1e40af',
+    900: '#1e3a8a',
+    950: '#172554',
+  },
+  neutral: {
+    50: '#fcfdfe',
+    100: '#f8fafc',
+    200: '#e2e8f0',
+    300: '#cbd5e1',
+    400: '#94a3b8',
+    500: '#64748b',
+    600: '#475569',
+    700: '#2a3448',
+    800: '#161d2e',
+    900: '#0b0f19',
+    950: '#05070d',
+  },
+} as const;
+
+export type Palette = typeof palette;
+export type PaletteScale = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950;
